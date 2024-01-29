@@ -177,6 +177,28 @@ HTML문서는 정해진 형식에 맞춰어 내용을 입력한다.
   
   
 #### 표
+1. 표를 만드는 <table>, <caption> 태그
+```html
+<table>
+  <caption>표 제목</caption>
+</table>
+```
+- <table> : 표의 시작과 끝을 알려주는 태그
+- <caption> : 표의 제목으로 표의 위쪽 중앙에 표시
+
+2. 행 <tr>, 태그와 셀 <td>,<th>
+```html
+<table>
+  <tr>
+    <td>1행 1열</td>
+    <td>1행 2열</td>
+  </tr>
+  <tr>
+    <td>2행 1열</td>
+    <td>2행 2열</td>
+  </tr>
+</table>
+```
 
 
 #### 이미지 삽입
