@@ -309,6 +309,33 @@ HTML문서는 정해진 형식에 맞춰어 내용을 입력한다.
   - MP3에 비해 더 나은 음질을 가지면서 파일 크기는 비슷하거나 작음.
   
 3. 오디오와 비디오 파일 삽입 <audio>, <video>
+```html
+<audio src="오디오 파일 경로" ></audio>
+<video src="비디오 파일 경로" ></video>
+```
+- <audio> : 오디오를 삽입함
+- <video> : 비디오를 삽입함
 
+- 속성
+  - controls : 컨트롤 바를 표시
+  - autoplay : 자동 실행
+  - loop : 반복 재생
+  - muted : 소리를 제거
+  - preload : 파일을 로딩할 것을 지정("auto(기본값)","metadata","none")
+  - width, height : 너비와 높이를 지정
+  - poster="파일이름"
+  
 
 #### 하이퍼링크
+1.링크 사입 <a> 태그
+```html
+# 기본 구조
+<a href="링크할 주소">텍스트</a>
+
+# 이미지 링크 만들기
+<a href="링크할 주소"><img src="이미지 경로"alt="대체 텍스트"></a>
+
+# 새탭에서 문서 열기
+<a href="링크할 주소" target="_blank">텍스트</a>
+```
+
