@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>폼 삽입하기</title>
+</head>
+<body>
+    <main class="05-from">
+        <section id="1-1">
+            <!-- 기본 구조 
+                <form [속성="속성값"]> 여러 폼 요소 </form> 
+            -->
+            <form action="register.php">
+                /* 여러 폼 요소 */
+            </form>
+            <form action="" autocapitalize="off">
+                /* 여러 폼 요소 */
+            </form>
+            <h3>----------------------------------------------</h3>
+        </section>
+
+        <section id="1-2">
+            <h2>레드향 주문하기</h2>
+            <form action="">
+                <fieldset>
+                    <legend>상품 선택</legend>
+                </fieldset>
+                <fieldset>
+                    <legend>배송 정보</legend>
+                </fieldset>
+            </form>
+            <h3>----------------------------------------------</h3>
+        </section>
+
+        <section id="1-3">
+            <legend>아이디(6자 이상)<input type="text"></legend>
+            <br>
+            <legend for="user-id">아이디(6자 이상)</legend>
+            <input type="text" id="user-id">
+            <h3>----------------------------------------------</h3>
+        </section>
+    </main>
+</body>
+</html>
