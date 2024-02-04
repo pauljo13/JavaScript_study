@@ -498,8 +498,45 @@ HTML문서는 정해진 형식에 맞춰어 내용을 입력한다.
 submit 버튼으로 폼을 서버로 전송하는데, 필수 필드에 내용이 모두 채워졌는지 검사해야한다. 이때 `required` 속성을 사용한다.
   
 #### 폼에서 사용하는 여러 가지 태그
-
-
-
-
-
+##### 여러 줄 입력 &lt;textarea&gt;
+```html
+<textarea>내용</textarea>
+```
+textarea 태그는 텍스트를 여러 줄 입력하는 영역을 만들 수도 있다. 이 영역을 텍스트 영역이라고 한다.
+- 속성
+  - cols : 텍스트 영역의 가로 너비를 문자 단위로 지정
+  - rows : 텍스트 영역의 세로 길이를 줄 단위로 지정, 지정한 숫자보다 줄 개수가 많아지면 스크롤 막개가 생김
+  
+##### 드롭다운 목록 &lt;select&gt;, &lt;option&gt;
+```html
+<select>
+  <option value="값1">내용1</option>
+  <option value="값2">내용2</option>
+  ...
+</select>
+```
+사용자가 내용을 직접입력하지 않고 여러 옵션 중에서 선택하게 하려면 드롭다운 목록이나 데이터 목록을 사용한다. 
+- &lt;select&gt; : 목록의 시작과 끝을 표시
+  - size : 화면에 표시할 드롭다운 항목의 개수를 지정
+  - multiple : 드롭다운 목록에서 둘 이상의 항목을 선택할 때 사용
+- &lt;option&gt; : 태그를 사용해 원하는 항목을 추가, value 속성으로 값 지정
+  - value : 서버로 넘겨줄 값을 지정
+  - selected : 드롭다운 메뉴를 삽입할 때 기본적으로 선택해서 보여 줄 항목 지정
+    
+##### 데이터 목록 만들어 주는 &lt;datalist&gt;, &lt;option&gt;
+```html
+<input for="text" list="데이터 목록 id">
+<datalist>
+  <option value="서버로 넘길 값1">내용1</option>
+  <option value="서버로 넘길 값2">내용2</option>
+</datalist>
+```
+데이터 목록을 사용하면 텍스트 필드에 값을 직접 입력하지 않고 미리 만들어 놓은 값 중에서 선택
+- &lt;datalist&gt; : 데이터 목록의 시작과 끝
+  
+##### &lt;button&gt; 태그
+```html
+<button type="submit">내용</button>
+<button type="reset">내용</button>
+<button type="button">내용</button>
+```
