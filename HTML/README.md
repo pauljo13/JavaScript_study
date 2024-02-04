@@ -540,3 +540,7 @@ textarea 태그는 텍스트를 여러 줄 입력하는 영역을 만들 수도 
 <button type="reset">내용</button>
 <button type="button">내용</button>
 ```
+button 태그는 폼을 전송하거나 리셋하는 버튼을 삽입한다.
+- submit : 폼을 서버로 전송
+- reset : 폼을 초기화
+- button : 버튼 형태만 만들 뿐 자체 기능은 없음
