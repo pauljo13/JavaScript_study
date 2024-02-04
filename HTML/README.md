@@ -448,22 +448,45 @@ HTML문서는 정해진 형식에 맞춰어 내용을 입력한다.
     - value : 기본적으로 표시할 날짜나 시간을 지정
   
 5. 전송, 리셋 버튼
+```html
+<input type="submit | reset" value="버튼에 표시할 내용">
+```
 - submit : 전송 버튼
 - reset : 리셋 버튼
   
 6. 이미지 버튼
+```html
+<input type="image" src="이미지 경로" alt="대체 텍스트">
+```
 - image : submit 버튼 대신 사용할 이미지를 넣는다.
   
 7. 기본 버튼
+```html
+<input type="button" value="버튼에 표시할 내용">
+```
 - button : 일반 버튼을 넣는다.
+  
+8. 파일첨부
 - file : 파일를 첨부할 수 있는 버튼
+  
+9. 히든 필드
+```html
+<input type="hidden" name="이름" value="서버로 넘길 값">
+```
 - hidden : 사용자에게는 보이지 않지만  서버로 넘겨주는 값이 있는 필드
-
-
-
-
+  
+  
+## HTML - 5
 #### input 태그의 주요 속성
- 
+단순히 내용을 입력할 뿐만 아니라 입력란에 커서나 힌트를 표시할 수도 있고, 꼭 입력해야 하는 필드도 지정할 수 있다.
+##### autofocus 속성
+`autofocus`속성을 사용하면 페이지를 불러오자마자 폼에서 원하는 요소에 마우스 포인터를 표시할 수 있다.
+```html
+<input type="텍스트-입력-필드" autofocus required>
+``` 
+  
+##### 힌트를 표시해 주는 placeholder 속성
+
   
 #### 폼에서 사용하는 여러 가지 태그
 
