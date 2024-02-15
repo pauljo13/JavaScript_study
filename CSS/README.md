@@ -192,7 +192,7 @@ body { font-family: "맑은 고딕", 돋움, 굴림}
   
 ##### 이탤릭체로 글자를 표시하는 font-style 속성
 ```css
-font-style: normal(1) | italic(2) | obliqe(3)
+{font-style: normal(1) | italic(2) | obliqe(3)}
 
 /*
 1. 기본값으로 일반적인 형태로 표시
@@ -232,10 +232,11 @@ font-family 속성으로 글꼴을 지정할 때 글꼴이 사용자 시스템�
 }
 ```
   
+
 #### 2-3. 텍스트 관련 스타일
 ##### 글자색을 지정하는 color 속성
 ```css
-color : <색상>
+{color : <색상>}
 ```
 color 속성 : 
 - 웹 문서에서 문단이나 제목 등의 텍스트에서 글자색을 바꿀수 있다.
@@ -255,7 +256,124 @@ color 속성 :
         - 0(색없음) ~ 255(색 가득 있음)
         - rgb(0,0,255) 표시
         - a(Alpha) 불투명도의 값으로 0 ~ 1 사이값을 갖는다.
+  
+##### 텍스트를 정렬하는 text-align 속성
+text-align 속성 : 문단의 텍스트 정렬 방법을 지정한다.
+```css
+{text-align: start | end | left | right | center | justify | match-parent}
+```
+- start : 현재 텍스트 줄의 시작 위치에 맞추어 문단을 정렬
+- end : 현재 텍스트 줄의 위치에 맞추어 문단을 정렬
+- left : 왼쪽에 맞추어 문단을 정렬
+- right : 오른쪽에 맞추어 문단을 정렬
+- right : 가운데에 맞추어 문단을 정렬
+- center : 양쪽에 맞추어 문단을 정렬
+- justify : 양쪽에 맞추어 문단을 정렬
+- match-parent : 부모 요소를 따라 문단을 정렬
+  
+##### 줄 간격을 조절하는 line-height 속성
+linen-height : 줄 간격을 원하는 만큼 조절할 수 있다.
+- 속성값 : px, 배율, 퍼센트(%)
+  
+##### 텍스트의 줄을 표시하거나 없애 주는 text-decoration 속성
+text-deciration : 텍스트에 밑줄을 긋거나 취소선을 표시합니다.
+- none : 텍스트에 줄을 표시하지 않음
+- underline : 밑줄을 표시
+- overline : 윗줄 표시
+- line-through : 취소선 표시
+  
+##### 텍스트에 그립자 효과를 추가하는 text-shadow 속성
+```css
+{text-shadow: none | <가로 거리> <세로 거리> <번짐 정도> <색상>}
+```
+text-shadow : 텍스트에 그림자 효과를 줄 수 있다.
+- 가로 거리 : 텍스트부터 그림자까지의 가로 거리로 필수 속성, 양숫값은 글자의 오른쪽, 음숫값은 글자의 왼쪽에 그림자를 만듬
+- 세로 거리 : 텍스트부터 그림자까지의 세로 거리로 필수 속성, 양숫값은 글자의 아래쪽, 음숫값은 글자의 위쪽에 그림자를 만듬
+- 번짐 정도 : 그림자가 번지는 정도, 양숫값을 사용하면 그림자가 모든 방향으로 퍼져 나가므로 그림자가 크게 표시
+- 색상 : 그림자 색상을 지정, 한 가지만 지정할 수도 있고 공백으로 구분해 여러 색상을 지정, 기본값은 현재 글자색
+  
+##### 텍스트의 대소 문자를 변환하는 text-transform 속성
+text-transform : 영문자를 표기할 떄 텍스트의 대소 문자를 원하는 대로 바꿀 수 있다.
+- capitalize : 첫 번째 글자를 대문자로 변환
+- uppercase : 모든 글자를 대문자로 변환
+- lowercase : 모든 글자를 소문자로 변환
+- full-width : 가능한 한 모든 문자를 전각 문자로 변환
+  
+##### 글자 간격을 조절하는 letter-spacing, word-spacing 속성
+letter-spacing : 글자와 글자 사이의 간격을 조절
+word-spacing : 단어와 단어 사이 간격을 조절
+  
+#### 2-4. 목록 스타일
+웹 사이트에서 자주 등장하는 메뉴 항목은 대부분 목록과 링크를 결합하여 만든다. 여기에 CSS를 적용하면 휠씬 멋진 사이트 메뉴가 된다.
+##### 불릿 모양과 번호 스타일을 지정하는 list-style-type 속성
+list-style-type : 불릿의 모양이나 번호 스타일을 지정할 수 있다.
+- disc : 채운 원 모양
+- circie : 빈 원 모양
+- square : 채운 사각형 모양
+- decimal : 1부터 시작하는 10진수
+- decimal-leading-zero : 앞에 0이 붙는 10진수
+- lower-roman : 로마 숫자 소문자
+- upper-roman : 로마 숫자 대문자
+- lower-alpha or lower-latin : 알파벳 소문자
+- upper-alpha or upper-latin : 알파벳 대문자
+- none : 불릿이나 숫자를 없앤다.
+  
+##### 불릿 대신 이미지를 사용하는 list-style-image 속성
+```css
+태그 {list-style-image: <url(이미지 파일 경로)> | none}
+```
+list-style-image : 불릿을 원하는 이미지로 바꿀 수 있다. 
+  
+##### 목록을 들여 쓰는 list-style-position 속성
+```css
+{list-style-position: inside | outside;}
+```
+list-style-position : 불릿이나 번호의 위치를 들여 쓸 수 있다.
+- inside : 불릿이나 번호를 기본 위치보다 안으로 들여 쓴다.
+- outside : 기본값
+  
+##### 목록 속성을 한꺼번에 표사허눈 list-styl 속성
+list-style :  list-style-type, list-style-image, list-style-position 속성을 한꺼번에 표시할 수 있다.
+```css
+/* 불릿 제거 */
+ul {list-style-type: none;}
+ul {list-style: none;}
 
+/* 소문자 목록 */
+ul {
+    list-style-type: lower-alpha;
+    list-style-position: inside;
+}
+ul {
+    list-style: lower-alpha inside;
+}
+```
+  
+
+#### 2-5. 표 스타일
+CSS를 이용하면 표의 크기뿐만 아니라 테두리, 셀의 테두리, 여러 가지 여백 등의 표 스타일을 지정할 수 있다.
+##### 표 제목의 위치를 정해 주는 caption-side 속성
+```css
+{caption-side: top | bottom}
+```
+caption-side : 표의 위치를 아래쪽으로 옮길 수 있다.
+- top : 캡션을 표 윗부분에 표시
+- bottom : 캡션을 표 아랫부분에 표시
+  
+##### 표에 테두리를 그려 주는 border 속성
+border : 표 테두리는 표 바깥 테두리와 셀 테두리를 각각 지정한다. 
+  
+##### 셀 사이의 여백을 지정하는 border-spacing 속성
+```css
+{border-spacing: 수평거리 수직거리}
+```
+border-spacing : 셀과 셀 사이의 여백을 조절할 수 있다.
+- 수평 거리의 값과 수직 거리의 값을 공백으로 구별해서 나타내는데 두 값이 같다면 1개만 지정할 수 있다.
+  
+##### 표와 셀 테두리를 합쳐 주는 border-collapse 속성
+border-collapse : 두 줄로 그냥 둘 것인지 아니면 합쳐서 하나로 표시할 것인지 결정한다.
+- collapse : 표와 셀의 테두리를 합쳐 하나로 표시
+- separate : 표와 셀의 테두리를 따로 표시 (기본값)
 
 ### 03. 레이아웃을 구성하는 CSS 박스 모델
 

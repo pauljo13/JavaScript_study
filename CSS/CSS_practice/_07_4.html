@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>순서 없는 목록과 알파벳 대문자 목록</title>
+    <style>
+        /* 순서 없는 목록과 알파벳 대문자 목록 */
+        .book1 {
+            list-style-type: none;
+        }
+        .book2 {
+            list-style-type: upper-alpha;
+        }
+
+        /* 불릿 대신 이미지 사용 */
+        .book3 {
+            list-style-image: url('../../source/07/images/dot.png');
+        }
+
+        /* 들여쓰기 */
+        .book4 {
+            list-style-position: inside;
+        }
+    </style>
+</head>
+<body>
+    <h1>도서 시리즈(불릿 모양 스타일)</h1>
+    <ul class="book1">
+        <li>Do it! 시리즈</li>
+        <li>첫 코딩 시리즈</li>
+        <li>된다 시리즈</li>
+    </ul>
+    <ol class="book2">
+        <li>Do it! 시리즈</li>
+        <li>첫 코딩 시리즈</li>
+        <li>된다 시리즈</li>
+    </ol>
+
+    <br>
+    <h3>-----------------------------------------------</h3>
+
+    <h1>도서 시리즈(이미지 대체)</h1>
+    <ul class="book3">
+        <li>Do it! 시리즈</li>
+        <li>첫 코딩 시리즈</li>
+        <li>된다 시리즈</li>
+    </ul>
+
+    <br>
+    <h3>-----------------------------------------------</h3>
+
+
+    <h1>도서 시리즈(들여 쓰는)</h1>
+    <ul>
+        <li>Do it! 시리즈</li>
+        <li>첫 코딩 시리즈</li>
+        <li>된다 시리즈</li>
+    </ul>
+    <ul class="book4">
+        <li>Do it! 시리즈</li>
+        <li>첫 코딩 시리즈</li>
+        <li>된다 시리즈</li>
+    </ul>
+
+    <br>
+    <h3>-----------------------------------------------</h3>
+
+
+</body>
+</html>
