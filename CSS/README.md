@@ -272,7 +272,7 @@ text-align 속성 : 문단의 텍스트 정렬 방법을 지정한다.
 - match-parent : 부모 요소를 따라 문단을 정렬
   
 ##### 줄 간격을 조절하는 line-height 속성
-linen-height : 줄 간격을 원하는 만큼 조절할 수 있다.
+lien-height : 줄 간격을 원하는 만큼 조절할 수 있다.
 - 속성값 : px, 배율, 퍼센트(%)
   
 ##### 텍스트의 줄을 표시하거나 없애 주는 text-decoration 속성
