@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>박스 테두리 스타일 1</title>
+    <style>
+        #box1 { border-style: solid;}
+        #box2 { border-style: dotted;}
+        #box3 { border-style: dashed;}
+        #box4 { border-style: double;}
+        #box5 { border-style: groove;}
+        #box6 { border-style: ridge;}
+
+        #boxw1 {
+            border-color: red;
+            border-style: solid;
+            border-width: 2px;}
+        #boxw2 {
+            border-top-color: red;
+            border-right-color: blue;
+            border-style: solid;
+            border-width: thick thin;}
+        #boxw3 {
+            border-style: solid;
+            border-width: thick thin thin;}
+        #boxw4 {
+            border-top-color: red;
+            border-right-color: blue;
+            border-bottom-color: green;
+            border-style: solid;
+            border-width: 10px 5px 5px 10px;}
+        
+        h1 {
+            padding-bottom: 5px;
+            border-bottom: 3px solid rgb(75, 70,70);
+        }
+        p {
+            padding: 10px;
+            border: 3px dotted blue;
+        }
+
+        #round {
+            border-radius: 25px;
+        }
+
+        #circle {
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <div id="box1">실선 테두리</div>
+    <br>
+    <div id="box2">점선 테두리</div>
+    <br>
+    <div id="box3">짧은 직선 테두리</div>
+    <br>
+    <div id="box4">이중 테두리</div>
+    <br>
+    <div id="box5">파인 테두리</div>
+    <br>
+    <div id="box6">튀어나온 테두리</div>
+    <br>
+    <br>
+    <div id="boxw1">2px</div>
+    <br>
+    <div id="boxw2">thick thin</div>
+    <br>
+    <div id="boxw3">thick thin thin</div>
+    <br>
+    <div id="boxw4">10px 5px 5px 10px</div>
+    <br>
+    <br>
+    <h1 id="box_a">박스 모델</h1>
+    <p>박스 모델은 실제 콘텐츠 영역, 박스와 콘텐츠 영역 사이의 여백인 패딩, 박스의 테두리, 그리고 여러 박스 모델 간의 여백인 마진 등의 요소로 구성 됩니다.</p>
+    <br>
+    <br>
+    <img src="../../source/08/images/cat.jpg">
+    <img id="round" src="../../source/08/images/cat.jpg">
+    <br>
+    <img src="../../source/08/images/photo.jpg">
+    <img id="circle" src="../../source/08/images/photo.jpg">
+
+
+</body>
+</html>
