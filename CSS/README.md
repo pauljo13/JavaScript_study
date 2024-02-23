@@ -538,7 +538,7 @@ clear 속성 : float 속성이 더 이상 유용하지 않다고 알려주는 �
 - right : 기준 위치와 요소 사이에 오른쪽으로 얼마나 떨어져 있는지 지정
 - top : 기준 위치와 요소 사이에 위쪽으로 얼마나 떨어져 있는지 지정
 - bottom : 기준 위치와 요소 사이에 아래쪽으로 얼마나 떨어져 있는지 지정
-
+  
 ##### 배치 방법을 지정하는 position 속성
 position 속성 : 웹 문서 안의 요소를 자유자재로 배치한다.
 - 텍스트, 이미지 요소를 나란히 배치하거나 원하는 위치를 선택할 수 있다.
@@ -553,6 +553,79 @@ position 속성 : 웹 문서 안의 요소를 자유자재로 배치한다.
 
 ### 04. 이미지와 그라데이션 효과롤 배경 꾸미기
 #### 4-1. 배경색과 배경 범위 지정하기
+##### 배경색을 지정하는 background-color 속성
+background-color 속성 : 배경을 넣고 싶은 요소의 스타일 규칙을 만들 때 사용
+- background-color는 상속되지 않는다.
+  
+##### 배경색의 적용 범위를 조절하는 background-clip 속성
+background-clip 속성 : 배경색의 적용 범위를 조절할 수 있다.
+- 속성값
+    - border-box : 박스 모델의 가장 외곽인 테두리까지 적용(기본값)
+    - padding-box : 박스 모델에서 테두리를 뺀 패딩 범위 적용 
+    - content-box : 박스 모델에서 내용(콘텐츠) 부분에만 적용
+  
+  
+#### 4-2. 배경 이미지 지정하기
+##### 웹 요소에 배경 이미지를 넣는 background-image 속성
+```css
+{background-image: url('이미지 경로')}
+```
+background-image 속성 : 웹 요소에 배경 이미지를 넣을 때 사용한다.
+- 이미지 파일 : jpg, gif, png
+  
+##### 배경 이미지의 반복 방법을 지정하는 background-repeat 속성
+background-repeat 속성 : 사용하면 배경 이미지를 가로와 세로 중에서 어떤 방향으로 반복 할지 지정하거나, 반복하지 않고 한 번만 나타나게 할 수 있다.
+- 속성값
+    - repeat : 브라우저 화면에 가득 찰 때까지 가로와 세로로 반복 (기본값)
+    - repeat-x : 브라우저 화면에 너비에 가득 찰 때까지 가로로 반복
+    - repeat-y : 브라우저 화면에 높에 가득 찰 때까지 세로로 반복
+    - no-repeat : 한 번만 표시하고 반복하지 않는다.
+  
+##### 배경 이미지의 위치로 조절하는 background-position 속성
+```css
+{background-position: <수평 위치> <수직 위치>;
+수평 위치 : left | center | right | 백분율 | 길이 값
+수직 위치 : top | center | bottom | 백분율 | 길이 값}
+```
+background-position 속성 : 배경 이미지의 수평 위치 또는 수직 위치의 값을 지정
+- 키워드 : 가장 많이 사용하는 속성값 left, center, right
+- 백분율(%) : 요소가 있는 해당 위치에 배경 이미지의 위치를 배분율로 계산하여 맞춘다.
+- 크기 : 배경 이미지의 위치를 길이로 직접 지정
+  
+##### 배경 이미지의 적용 범위를 조절하는 background-origin 속성
+background-origin 속성 : 배경 이미지를 적용할 범위을 지정
+- 속성값
+    - content-box : 박스 모델에서 내용 부분에만 배경 이미지를 표시
+    - padding-box : 박스 모델에서 패딩까지 배경 이미지를 표시 (기본값)
+    - border-box : 박스 모델에서 테두리까지 배경 이미지 표시
+  
+##### 배경 이미지를 고정하는 background-attachment 속성
+background-attachment 속성 : 배경 이미지를 고정할 수 있다.
+- 속성값
+    - scroll : 화면을 스크롤하면 배경 이미지도 스크롤 (기본값)
+    - fixed : 화면을 스크롤하면 배경 이미지는 고정되고 내용만 스크롤
+  
+##### backgroud 속성 하나로 배경 이미지 제어하기
+```css
+body {
+    background-image: url("images/bs4.png");
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-attachment: fixed;
+}
+
+/* 단축적로 작성가능하다 */
+body {background: url("images/bs4.png") no-repeat center bottom fixed}
+```
+  
+##### 배경 이미지 크기를 조정하는 background-size 속성
+background-size 속성 : 배경 이미지의 크기를 조절할 수 있다.
+- 속성값 :
+    - auto : 원래 배경 이미지 크기만큼 표시 (기본값)
+    - contain : 요소 안에 배경 이미지가 다 들어오도록 이미지를 확대, 축소함
+    - cover : 배경 이미지로 요소를 모두 덮더록 이미지를 확대, 축소함
+    - 크기 : 이미지의 너비와 높이를 지정, 값이 하나만 주어질 경우 너빗값으로 인식, 이미지의 너비와 너빗값에 맞춘 높잇값도 자동 계산
+    - 백분율 : 배경 이미지가 들어가랄 요소의 크기를 기준으로 값을 백분율로 지정하고 그 크기에 맞도록 배경 이미지를 확대, 축소 한다.
 
 
 
