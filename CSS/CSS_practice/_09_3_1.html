@@ -64,6 +64,34 @@
             background: radial-gradient(circle at 20% 20%, white, blue);
             
         }
+        .radial8 {
+            background: skyblue;
+            background: radial-gradient(yellow, white, orange);
+        }
+        .radial9 {
+            background: skyblue;
+            background: radial-gradient(yellow, white 30%, orange 80%);
+        }
+        #patten {
+            width: 700px;
+            height: 500px;
+        }
+        .grad4 {
+            background: red;
+            background: repeating-linear-gradient(to bottom, yellow, red 20px);
+        }
+        .grad5 {
+            background: red;
+            background: repeating-radial-gradient(circle, white, #ccc 10%);
+        }
+        .grad6 {
+            background: red;
+            background: repeating-linear-gradient(to bottom, yellow, yellow 20px, red 20px, red 40px)
+        }
+        .grad7 {
+            background: #ccc;
+            background: repeating-radial-gradient(circle, white, white 10%, #ccc 10%, #ccc 20%);
+        }
     </style>
 </head>
 <body>
@@ -91,5 +119,18 @@
     <div class="radial7">
         <h2>위치</h2>
     </div>
+    
+    <div class="radial8">
+        <h2>색상 중지점</h2>
+    </div>
+    <div class="radial9">
+        <h2>색상 중지점</h2>
+    </div>
+    <h1>패턴 만들기</h1>
+    <div id="patten" class="grad4"><h2>패턴1</h2></div>
+    <div id="patten" class="grad5"><h2>패턴1</h2></div>
+    <div class="grad6"><h2>패턴2</h2></div>
+    <div class="grad7"><h2>패턴2</h2></div>
+    
 </body>
 </html>
