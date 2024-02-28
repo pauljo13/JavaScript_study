@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>끝나는 속성 선택자</title>
+    <style>
+        ul {list-style: square;}
+        a[href $= hwp] {
+            background: url("../../source/10/images/hwp_icon.gif") center right no-repeat;
+            padding-right: 25px;
+        }
+        a[href $= xls] {
+            background: url("../../source/10/images/excel_icon.gif") center right no-repeat;
+            padding-right: 25px;
+        }
+    </style>
+</head>
+<body>
+    <h3>회사 소개 파일 내려받기</h3>
+    <ul>
+        <li><a href="intro.hwp">hwp 파일</a></li>
+        <li><a href="intro.xls">엑셀 파일</a></li>
+    </ul>
+
+</body>
+</html>
