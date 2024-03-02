@@ -847,9 +847,21 @@ transform: scaleZ(sz)
 ```
   
 ##### 요소를 회전시키는 rotate() 함수
-```css
-transform: rotate(각도)
-```
+- 2차원 rotate()
+    ```css
+    transform: rotate(각도)
+    ```
+    rotate() 함수에서 지정할 수 있는 각도의 값은 일반적인 각도나 래디안을 사용하는데, 이때 1래디안은 180도/파이를 의미한다.
+    - 양수 : 시계 방향 | 음수 : 시계 반대 방향
+- 3차원 rotate()
+    ```css
+    transform: rotate(rx, ry, 각도)
+    transform: rotate3d(rx, ry, rz, 각도)
+    transform: rotateX(각도)
+    transform: rotateY(각도)
+    transform: rotateZ(각도)
+    ```
+
 
 
 #### 6-2. 트랜지션 알아보기
