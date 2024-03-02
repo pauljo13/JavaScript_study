@@ -788,8 +788,75 @@ repeating-radial-gradient 속성 : 원형 그라데이션의 패번을 만들 �
 가상 요소는 문서 안의 특정 부분에 스타일을 지정하기 위해 가상으로 요소를 만들어 추가한다. 가상 요소를 만들어 사용하는 이유는 특별히 화면에 보이는 부분을 꾸밀 때 불필요한 태그를 사용하지 않도록 하기 위한 것
 - 첫 번째 줄, 첫 번째 글자에 스타일을 적용하는 '::first-line 요소, ::first-letter 요소'
 - 내용 앞뒤에 콘텐츠를 추가하는 '::before 요소, ::after 요소'
+  
+
 
 ### 06. 트랜지션과 애니메이션
+#### 6-1. 변형 알아보기
+##### transform과 변형 함수
+```css
+transform: 함수
+```
+- transform() : 웹 요소를 이동시키는 변형 함수
+- 2차원 변형
+    - 웹 요소를 평면에서 변형
+    - 수평 방향, 수직 방향으로 왜곡
+    - x축 : +(오른쪽),-(왼쪽) / y축 : +(아래쪽),-(위쪽)
+    - 함수
+        - translate(tx, ty) : 지정한 크기만큼 x축, y축으로 이동
+        - translateX(tx) : 지정한 크기만큼 x축으로 이동
+        - translateY(ty) : 지정한 크기만큼 y축으로 이동
+        - scale(sx, sy) : 지정한 크기만큼 x축 y축으로 확대-축소
+        - scaleX(sx) : 지정한 크기만큼 x축으로 확대-축소
+        - scaleY(sy) : 지정한 크기만큼 y축으로 확대-축소
+        - rotate(각도) : 지정한 각도만큼 회전
+        - skew(ax, ay) : 지정한 각도만큼 x축과 y축으로 왜곡합니다.
+        - skewX(ax) : 지정한 각도만큼 x축으로 왜곡
+        - skewY(ay) : 지정한 각도만큼 y축으로 왜곡
+- 3차원 변형
+    - x축과 y축에 원근감을 주는 z축을 추가해서 변형한다.
+    - z축 : +(뒤로 이동), -(앞으로 이동)
+    - 함수
+        - translate3d(tx, ty, tz) : 지정한 크기만큼 x축, y축, z축으로 이동
+        - translateZ(tz) : 지정한 크기만큼 z축으로 이동
+        - scale3d(sx, sy, sz) : 지정한 크기만큼 x축, y축, z축으로 확대 축소
+        - scaleZ(sz) : 지정한 크기만큼 z축으로 확대 축소 
+        - rotate(rx, ry, 각도) : 지정한 각도만큼 회전
+        - rotate3d(rx, ry, zy, 각도) : 지정한 각도만큼 회전
+        - rotateX(각도) : 지정한 각도만큼 x축 회전
+        - rotateY(각도) : 지정한 각도만큼 y축 회전
+        - rotateZ(각도) : 지정한 각도만큼 z축 회전
+        - perspective(길이) : 입체적으로 보일 수 있도록 갚잇값을 지정
+  
+##### 웹 요소를 이동시키는 translate() 함수
+```css
+transform: translate(tx, ty)
+transform: translate3d(tx, ty, tz)
+transform: translateX(tx)
+transform: translateY(ty)
+transform: translateZ(tz)
+```
+  
+##### 요소를 확대-축소하는 scale() 함수
+```css
+transform: scale(sx, sy)
+transform: scale3d(sx, sy, sz)
+transform: scaleX(sx)
+transform: scaleY(sy)
+transform: scaleZ(sz)
+```
+  
+##### 요소를 회전시키는 rotate() 함수
+```css
+transform: rotate(각도)
+```
+
+
+#### 6-2. 트랜지션 알아보기
+
+#### 6-3. 애니메이션 알아보기
+
+
 
 ### 07. 반응형 웹과 미디어 쿼리
 
