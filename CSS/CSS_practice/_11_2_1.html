@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>트랜지션</title>
+    <style>
+        #container {
+            width: 600px;
+            margin: 40px auto;
+        }
+        .box {
+            width: 200px;
+            height: 200px;
+            border: 2px solid black;
+            float: left;
+            background-color: blue;
+            transition-property: width, height;
+            transition-duration: 2s, 1s;
+        }
+        .box:hover{
+            width: 600px;
+            height: 220px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div class="box"></div>
+    </div>
+</body>
+</html>

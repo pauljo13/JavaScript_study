@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>트랜지션 속도 곡선</title>
+    <style>
+        #container {
+            width: 1000px;
+            margin: 50px auto;
+        }
+        .box {
+            width: 100px;
+            height: 100px;
+            margin: 20px;
+            border: 2px solid black;
+            float: left;
+            background-color: blue;
+            transition-property: height;
+            transition-duration: 2s;
+            text-align: center;
+            color: wheat;
+        }
+        .box:hover{
+            height: 300px;
+        }
+        #ease {transition-timing-function: ease;}
+        #ease {transition-timing-function: linear;}
+        #ease {transition-timing-function: ease-in;}
+        #ease {transition-timing-function: ease-in-out;}
+        #ease {transition-timing-function: ease-out;}
+        #ease {transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);}
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div class="box" id="ease">ease</div>
+        <div class="box" id="linear">linear</div>
+        <div class="box" id="ease-in">ease-in</div>
+        <div class="box" id="ease-out">ease-out</div>
+        <div class="box" id="ease-in-out">ease-in-out</div>
+        <div class="box" id="cubic-bezier">cubic-bezier</div>
+    </div>
+</body>
+</html>

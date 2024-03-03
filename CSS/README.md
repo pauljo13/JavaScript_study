@@ -861,11 +861,61 @@ transform: scaleZ(sz)
     transform: rotateY(각도)
     transform: rotateZ(각도)
     ```
-
-
+- perspective() 속성 : 3차원 변형에서 사용하는 속성으로 원래 있던 위치에서 사용자가 있는 방향의나 혹은 반대 방향으로 잡아닿기거나 밀어내어 원근감을 표현한다.
+    - 값이 클수록 사용자로부터 멀어진다.
+    - 변형하는 요소가 아니라 변형하는 요소의 부모 요소에 정의해야 한다.
+      
+##### 요소를 비틀어 왜곡하는 skew() 함수
+```css
+transform: skew(x, y)
+transform: skewX(x)
+transform: skewY(y)
+```
+skew() : 지정한 각도만큼 요소를 비틀어 왜곡한다. 이떄 양쪽 방향으로 비틀거나 한쪽 방향으로만 비틀 수도 있다.  
+  
 
 #### 6-2. 트랜지션 알아보기
-
+##### 트랜지션transition
+트랜지션 : 웹 요소의 배경색을 바꾸거나 도형의 테두리를 사각형에서 원형으로 바꾸는 것처럼 스타일 속성이 바뀌는 것을 말한다.
+  
+##### 트랜지션과 속성
+- **transition-property** : 트랜지션 대상 지정
+    ```css
+    transition-property: all | none | 속성이름
+    ```
+    - all : 사용하거나 생략할 경우 요소의 모든 속성이 트랜지션 대상이 된다.(기본값)
+    - none : 트랜지션을 하는 동안 아무 속성도 바뀌지 않는다.
+    - 속성 이름 : 트랜지션 효과를 적용할 속성을 지정, 속성이 여럿일 경우 쉼표(,)
+- **transition-duration** : 트랜지션 실행할 시간 지정
+    ```css
+    transition-duration: 시간
+    ```
+    - 진행 시간을 지정해 자연스업게 바뀌는 애니메이션 효과를 만들 수 있다.
+    - 시간 단위 : 초, 밀리초
+    - 대상 속성이 여러 개인 경우 쉼표(,)로 구분해 여러 개를 지정할 수 있다.
+- **transition-timing-function** : 트랜지션 실행 형태 지정
+    ```css
+    transition-timing-function: linear | ease | ease-in | ease-out | ease-in-out | cubic-bezier(n,n,n,n)
+    ```
+    - linear : 시작부터 끝까지 똑같은 속도로 진행
+    - ease : 처음에는 천천히 시작하고 점점 빨라지다 마지막에 천천히 (기본값)
+    - ease-in : 느리게 시작
+    - ease-out : 느리게 끝냄
+    - ease-in-out : 느리게 시작하고 느리게 끝냄
+    - cubic-bezier(n,n,n,n) : 베지에 함수를 정의, n값은 0~1 사이
+- **transition-delay** : 트랜지션 지연 시간을 지정
+    ```css
+    transition-delay: 시간
+    ```
+    - 트랜지션 효과를 언제부터 시작할 것인지 설정
+    - 지정한 시간만큼 기다렸다가 트랜지션이 시작됨
+    - 기본값 : 0
+    - 초, 밀리초
+- **transition** : 위의 속성을 한꺼번에 지정
+    ```css
+    transition: property값 | duration값 | timing-function값 | delay값
+    ```
+  
 #### 6-3. 애니메이션 알아보기
 
 
