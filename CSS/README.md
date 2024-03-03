@@ -915,8 +915,31 @@ skew() : 지정한 각도만큼 요소를 비틀어 왜곡한다. 이떄 양쪽 
     ```css
     transition: property값 | duration값 | timing-function값 | delay값
     ```
-  
+    
 #### 6-3. 애니메이션 알아보기
+##### CSS 애니메이션에서 사용하는 속성
+css3의 animation 속성을 사용하면 자바스크립트를 사용하지 않고도 웹 요소에 애니메이션을 추가할 수 있다. animation 속성은 특정 지점에서 스타일을 바꾸면서 애니메이션을 만드는데, 이렇게 애니메이션 중간에 스타일이 바뀌는 지점을 **키프레임Keyframe** 이라고 한다.
+- **@keyframes** : 키프레임을 지정
+    ```css
+    @keyframes 이름 {
+        선택자 { 스타일 }
+    }
+    ```
+- animation 속성
+    - **animation-delay** : 애니메이션의 시작 시간 지정
+
+    - **animation-direction** : 애니메이션을 종료한 뒤 처음부터 시작할지, 역방향으로 진행할지 지정
+    - **animation-duration** : 애니메이션 실행 시간
+
+    - **animation-iteration-count** : 애니메이션 반복 횟수
+
+    - **animation-name** : @keyframes로 설정한 중간 상태를 지정
+        ```css
+        animation-name: 키프레임 이름 | none
+        ```
+    - **animation-timing-function** : 키프레임의 전환 형태 지정
+
+    - **animation** : 애니메이션 속성 전부
 
 
 
