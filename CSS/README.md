@@ -1045,8 +1045,31 @@ css3의 animation 속성을 사용하면 자바스크립트를 사용하지 않�
   
 ##### 미디어 쿼리 적용하기
 - 외부 CSS 파일 연결 방법
-    
+    ```css
+    <link rel="stylesheet" media="미디어 쿼리 조건" href="css 파일 경로">
+
+    @import url(css 파일 경로) 미디어 쿼리 조건
+    ```
+    각 조건별로 css 파일을 따로 저장한 뒤 link 태그나 @import 문을 사용해서 연결한다.
+    - link : head 태그 사이에 넣는다. 
+    - @import : style 태그 사이에 넣는다.
+    - css 파일이 많고 규모가 큰 사이트에 경우 @import보다 link 태그를 사용
 - 웹 문서에서 직접 정의
+    ```css
+    <style media="<조건>"> {
+        <스타일 규칙>
+    }
+    </style>
+
+
+    <style>
+        @media <조건> {
+            <스타일 규칙>
+        }
+    </style>
+    ````
+    웹 문서에서 미디어 쿼리를 직접 지정하는 방법으로 위와 같이 2가지 방법이 존재한다.
+
 
 #### 7-3. 그리드 레이아웃
 
