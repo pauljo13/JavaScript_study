@@ -927,21 +927,46 @@ css3의 animation 속성을 사용하면 자바스크립트를 사용하지 않�
     ```
 - animation 속성
     - **animation-delay** : 애니메이션의 시작 시간 지정
-
-    - **animation-direction** : 애니메이션을 종료한 뒤 처음부터 시작할지, 역방향으로 진행할지 지정
+        ```css
+        animation-delay: 시간
+        ```
+        - 값은 초나 밀리초
+        - 기본값 = 0 (애니메이션은 실행되지 않는다.)
+    - **animation-duration** : 애니메이션을 종료한 뒤 처음부터 시작할지, 역방향으로 진행할지 지정
     - **animation-duration** : 애니메이션 실행 시간
-
+        ```css
+        animation-direction: normal | revers | alternate | alternate-reverse
+        ```
+        - normal : 애니메이션을 from에서 to로 진행 (기본값)
+        - reverse : 애니메이션을 to에서 from으로 진행
+        - alternate : 홀수 번째는 normal로, 짝수 번째는 reverse로 진행
+        - alternate-reverse : 홀수 번째는 reverse, 짝수 번쨰는 normal로 진행
     - **animation-iteration-count** : 애니메이션 반복 횟수
-
+        ```css
+        animation-iteration-count: 숫자 | infinite
+        ```
+        - 숫자 : 반복 횟수
+        - infinite : 무한 반복
     - **animation-name** : @keyframes로 설정한 중간 상태를 지정
         ```css
         animation-name: 키프레임 이름 | none
         ```
     - **animation-timing-function** : 키프레임의 전환 형태 지정
-
+        ```css
+        animation-timing-function: linear | ease | ease-in | ease-out | ease-in-out | cubic-bezier(n,n,n,n)
+        ```
+        - 애니메이션의 시작, 중간, 끝에서 속도를ㄹ 지정
     - **animation** : 애니메이션 속성 전부
-
-
-
+        ```css
+        animation: name | duration | timing-function | delay | iteration-count | direction
+        ```
+        - 여러 애니메이션 속성을 한줄에 쓸 수 있다.
+        - 두 개이상의 애니메이션은 쉼표(,) 사용해 구분한다.
+  
+  
 ### 07. 반응형 웹과 미디어 쿼리
-
+#### 7-1. 반응형 웹
+#### 7-2. 미디어 쿼리
+#### 7-3. 그리드 레이아웃
+#### 7-4. 플렉스 박스 레이아웃
+#### 7-5. CSS 그리드 레이아웃
