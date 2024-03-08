@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css 그리드 2</title>
+    <style>
+        #wrapper {
+            width: 700px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(3, 100px);
+        }
+        .box1 {
+            background-color: #3689ff;
+            grid-column: 1/4;
+        }
+        .box2 {
+            background-color: #00cf12;
+            grid-row: 2/4;
+        }
+        .box3 {
+            background-color: #ff9019;
+            grid-column: 2/4;
+            grid-row-start: 2;
+        }
+        .box4 {
+            background-color: #ffd000;
+            grid-column-start: 3;
+            grid-row-start: 3;
+        }
+
+        #wrapper2 {
+            width: 700px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(3, 100px);
+            grid-template-areas:
+            "box1 box1 box1"
+            "box2 box3 box3"
+            "box2 . box4";
+        }
+        .box5 {
+            background-color: #3689ff;
+            grid-area: box1;
+        }
+        .box6 {
+            background-color: #00cf12;
+            grid-area: box2;
+        }
+        .box7 {
+            background-color: #ff9019;
+            grid-area: box3;
+        }
+        .box8 {
+            background-color: #ffd000;
+            grid-area: box4;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+        <div class="box1">box1</div>
+        <div class="box2">box2</div>
+        <div class="box3">box3</div>
+        <div class="box4">box4</div>
+    </div>
+    <br>
+    <div id="wrapper2">
+        <div class="box5">box1</div>
+        <div class="box6">box2</div>
+        <div class="box7">box3</div>
+        <div class="box8">box4</div>
+    </div>
+</body>
+</html>

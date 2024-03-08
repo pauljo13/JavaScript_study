@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS 그리드</title>
+    <style>
+        #wrapper {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(200px, auto));
+            grid-template-rows: repeat(2,minmax(100px, auto));
+            grid-row-gap: 20px;
+            grid-column-gap: 20px;
+        }
+        #wrapper2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, auto));
+            grid-template-rows: repeat(2,minmax(100px, auto));
+            grid-row-gap: 20px;
+            grid-column-gap: 20px;
+        }
+        #wrapper3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, auto));
+            grid-template-rows: repeat(2,minmax(100px, auto));
+            grid-row-gap: 20px;
+            grid-column-gap: 20px;
+        }
+        .items {
+            border: 1px solid #000;
+        }
+        .items:nth-child(2n+1) {
+                background: #ccc;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+        <div class="items">Hello. My name is Aan</div>
+        <div class="items">This is your phone.</div>
+        <div class="items">Hi, I'm good.</div>
+        <div class="items">my computer and my car</div>
+        <div class="items">What is your name?</div>
+        <div class="items">See you next time.</div>
+    </div>
+    <br>
+    <div id="wrapper2">
+        <div class="items">Hello. My name is Aan</div>
+        <div class="items">This is your phone.</div>
+        <div class="items">Hi, I'm good.</div>
+        <div class="items">my computer and my car</div>
+        <div class="items">What is your name?</div>
+        <div class="items">See you next time.</div>
+    </div>
+    <div id="wrapper3">
+        <div class="items">Hello. My name is Aan</div>
+        <div class="items">This is your phone.</div>
+        <div class="items">Hi, I'm good.</div>
+        <div class="items">my computer and my car</div>
+        <div class="items">What is your name?</div>
+        <div class="items">See you next time.</div>
+    </div>
+</body>
+</html>
