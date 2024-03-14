@@ -307,7 +307,7 @@ var 변수명
 switch 문 : 조건을 체크한 후 case 문을 사용하여 명령을 처리할 수 있다.
 - if~else 문을 여러 개 사용할는 경우 사용한다.
 - 기본형
-    ```javascipt
+    ```javascript
     switch(조건)
     {
         case 값1: 명령1
