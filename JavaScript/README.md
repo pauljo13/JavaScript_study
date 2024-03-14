@@ -275,7 +275,51 @@ var 변수명
 ```
   
 #### 논리 연산자로 조건 체크하기
-
+조건을 2개 이상 체크할 경우에는 논리 연산자를 사용해 조건식을 만든다.
+- OR 연산자
+    - "||" 사용
+    - 피연산자 2개 중에서 true가 하나라도 있으면 결괐값은 true
+    - 연산값    
+        - false || false = false
+        - false || true = true
+        - true || false = true
+        - true || true = true
+    - 첫 조건이 true 이면 무조건 true 이기 때문에 첫 조건을 true 가 될 확률이 높은 조건은 먼저 작성한다.
+- AND 연산자
+    - "&&" 사용
+    - 피연산자 2개 모두 true 이면 결괏값은 true
+    - 연산값
+        - false && false = false
+        - false && true = false
+        - true && false = false
+        - true && true = true
+    - 첫 조건이 false 이면 무조건 false 이기 때문에 첫 조건을 false 가 될 확률이 높은 조건은 먼저 작성한다.
+- NOT 연산자
+    - "!" 사용
+    - 연산값
+        - false = true
+        - true = false
+    ```javascript
+    if(변수 !== null) { 실행할 명령 } // 입력값이 null이 아니면 if 문을 실행
+    ```
+  
+#### switch 문
+switch 문 : 조건을 체크한 후 case 문을 사용하여 명령을 처리할 수 있다.
+- if~else 문을 여러 개 사용할는 경우 사용한다.
+- 기본형
+    ```javascipt
+    switch(조건)
+    {
+        case 값1: 명령1
+            break
+        case 값2: 명령2
+            break
+        ...
+        default: 명령n
+    }
+    ```
+- default : switch 문의 마지막에 작성하며 break 문을 쓰지 않는다.
+  
 ### 2-5. 반복문
 ## 3. 함수와 이벤트
 ## 4. 함수와 이벤트
