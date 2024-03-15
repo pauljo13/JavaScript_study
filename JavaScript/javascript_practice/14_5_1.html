@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>반복문</title>
+    <style>
+        body {
+            margin: 100px;
+            padding: auto;
+            height: 500px;
+            text-align: center;
+            font-size: 40px;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        // 반복문 없이
+        // var sum = 0;
+
+        // sum += 1;
+        // sum += 2;
+        // sum += 3;
+        // sum += 4;
+        // sum += 5;
+        // document.write("1. 1부터 5까지 더하면 " + sum)
+
+        // 반복문 사용
+        var i;
+        var sum = 0;
+        var count = parseInt(prompt("어디까지 더할까요? : "))
+        
+        for(i = 1; i < count + 1; i++) {
+            sum += i
+        }
+        document.write("1부터 "+ count + "까지 더하면 " + sum)
+    </script>
+</body>
+</html>
