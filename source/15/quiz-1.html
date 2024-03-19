@@ -7,7 +7,18 @@
 </head>
 <body>
   <script>
-
+	function sumMulti(x,y) {
+		let result;
+		if (x === y) {
+			result = x * y;
+		}else {
+			result = x + y;
+		}
+		console.log(result);
+	}
+	var x = parseInt(prompt("첫번째 숫자를 입력하시오."));
+	var y = parseInt(prompt("두번째 숫자를 입력하시오."));
+	sumMulti(x,y);
   </script>
 </body>
 </html>
