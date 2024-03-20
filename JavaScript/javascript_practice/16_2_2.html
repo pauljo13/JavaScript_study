@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array 객체의 메서드</title>
+</head>
+<body>
+    <script>
+        var nums = [1,2,3];
+        var chars = ["a", "b", "c", "d"];
+        //concat : 기존 배열에 요소를 추가해 새로운 배열
+        var numsChars = nums.concat(chars);
+        var charsNums = chars.concat(nums);
+        document.write("<p>nums에 chars 함치면: " + numsChars + "<br> chars에 nums 합치면: " + charsNums + "</p>")
+
+        //join : 배열 요소르 문자열로 합침. 이떄 구분자를 지정할 수 있음
+        var string1 = nums.join();
+        document.write("<p>");
+        document.write("구분자 없이: ", string1);
+        var string2 = chars.join('/');
+        document.write("<br>");
+        document.write("구분자 사용: ", string2);
+        document.write("</p>");
+            
+        //push : 배열의 맨 끝에 새로운 요소를 추가한 후 새로운 length를 반환
+        //unshift : 배열의 시작 부분에 새로운 요소를 추가    
+        var ret1 = nums.push(4, 5);
+        document.write("<p>");
+        document.write("length: ", ret1, " | 배열:", nums);
+        document.write("<br>");
+        var ret2 = nums.unshift(0);
+        document.write("length: ", ret2, " | 배열:", nums);
+        document.write("</p>");
+        
+        //pop : 배열의 마지막 요소를 꺼내 그 값을 결과로 반환
+        //shift : 배열에서 첫 번째 요소를 꺼내 그 값을 결과로 반환
+        document.write("<p>");
+        var popped1 = chars.pop();
+        document.write("꺼낸 요소: ", popped1, " | 배열: ", chars);
+        document.write("<br>");
+        var popped2 = chars.shift();
+        document.write("꺼낸 요소: ", popped2, " | 배열: ", chars);
+        document.write("</p>");
+        
+        //splice : 배열에 요소를 추가하거나 삭제
+        //splice(요소위치, 삭제 요소 개수, 추가할 요소)
+        document.write("<p>");
+        var numbers = [1, 2, 3, 4, 5];
+        var newNumbers = numbers.splice(2);
+        document.write("반환된 배열: " + newNumbers);
+        document.write("<br>");
+        document.write("변경된 배열: " + numbers);
+        document.write("<br>");
+        var study = ["html", "css", "web", "jqery"];
+        var newStudy = study.splice(2,1);
+        document.write("반환된 배열: " + newStudy);
+        document.write("<br>");
+        document.write("변경된 배열: " + study);
+        document.write("<br>");
+        var newStudy2 = study.splice(2,1,"js");
+        document.write("반환된 배열: " + newStudy2);
+        document.write("<br>");
+        document.write("변경된 배열: " + study);
+        document.write("</p>");
+        
+        //slice : 배열에서 특정한 부분만 잘라낸다.
+        //slice(시작 인덱스, 인덱스 전까지)
+        var colors = ["red", "green", "blue", "white", "black"];
+        var colors2 = colors.slice(2);
+        document.write("<p>");
+        document.write(colors2)
+        document.write("<br>");
+        document.write(colors.slice(2,4));
+        document.write("</p>");
+
+        
+        //filter : 배열 요소 중에서 중어진 필터링 함수에 대해 true인 요소만 골라 새로운 배열 생성
+        //every : 배열의 모든 요소가 주어진 함수에 대해 참이면 true를 반환 그렇지 않으면 false반환
+        //forEach : 배열의 모든 요소에 대해 주어진 함수를 실행
+        //indexOf : 주어진 값과 일치하는 값이 있는 배열 요소의 첫 인덱스 찾음
+        //reverse : 배열의 배치 순서를 역순으로 바꿈
+        //sort : 배열 요소를 지정한 조건에 따라 정렬
+        //toString ; 배열에서 지정한 부분을 문자열로 반환, 이때 각 요소는 쉼표(,)로 구분
+    </script>
+</body>
+</html>
