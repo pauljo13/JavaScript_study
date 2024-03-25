@@ -900,7 +900,25 @@ navigator 객체 : 웹 브라우저의 버전을 비롯해 플러그인 설치 �
     - protocol : URL 프로토콜을 저장
     - port : URL의 포츠 번호를 담고 있다.
     - password : 도메인 이름 앞에 username과 password 함께 입력해서 접속하는 사이트의 UR일 경우에 password 정보를 저장
-    - 
-    
+    - search : URL 중에서 ?로 시작하는 검색 내용을 저장
+    - username : 도메인 이름 앞에 username을 함께 입력해서 접속하는 사이트의 URL일 경우에 username 정보를 저장
 - 메서드
+    - assign() : 현재 문서에 새 문서 주소를 할당해서 새 문서르 가져옴
+    - reload() : 현재 문서를 다시 불어옴
+    - replace() : 현재 문서의 url을 지우고 다은 url의 문서로 교체
+    - toString() : 현재 문서의 url을 문자열로 반환
+  
+#### screen 객체
+- 웹 사이트에 접속하는 사용자의 화면 크기느 모두 다르다. 이에 사용자의 화면 크기나 정보를 알아낼 때 사용한다.
+- 프로퍼티
+    - availHeight : UI 영역(예를 들어 윈도우의 작업 표시줄이나 Mac의 독)을 제외한 영역의 높이 표시
+    - availWidth : UI 영역을 제외한 내용 표시 영역의 너비를 나타냄
+    - colorDepth : 화면에서 픽셀을 렌더링할 떄 사용하는 색상 수
+    - height : UI 영역을 포함한 화면의 높이
+    - orientaion : 화면의 현재 방향
+    - pixelDepth : 화면에서 픽셀을 렌더링할 때 사용하는 비트 수를 나타냄
+    - width : UI 영역을 포함한 화면의 너비를 나타냄
+- 메서드
+    - lockOrientation() : 화면 방향을 잠금
+    - unlockOrientation() : 화면 방향을 잠금을 해제
 ## 5. 문서 객체 모델(DOM)
