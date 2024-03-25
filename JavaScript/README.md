@@ -812,5 +812,62 @@ window 객체의 메서드는 대화 창을 표시하거나 브라우저 창의 
 #### navigator 객체
 navigator 객체 : 웹 브라우저의 버전을 비롯해 플러그인 설치 정보나 온 오프라인 등의 여러 정보가 담겨 있다. 이 정보는 사용자가 수정할 수 없으며 가져와서 보여 줄 수만 있다.
 - 웹 브라우저와 렌더링 엔진
+    - 웹 브라우저가 점점 다양해짐에 따라 모든 사용자의 웹 브라우저에서 똑같이 동작하는 웹 문서를 개발할 필요성이 생겼다. 여러 웹 브라우저를 고려하여 개발하는 것은 웹 개발자에게 가장 어려운 부분이다.
+    - 렌더링 엔진 rendering engine : 레이아웃 엔진이라고도 한다. 여러 웹 브라우저에서 가장 먼저 고려할 부분, css 속성 앞에는 브라우저 벤더를 의미하는 프리픽스를 지정한다.
+    - 웹 브라우저마다 HTML이나 CSS 핵석하는 렌더링 엔진이 다르므로 피리픽스를 붙여 브라우저를 구별한다.
+    - 브라우저별 렌더링 엔진과 자바스크립트 엔진
+        - 브라우저 : 렌더링 엔진 | 자바스크립트 엔진
+        - 크롬 : 블링크 | V8
+        - 파이어폭스 : 게코 | 스파이더몽키
+        - 인터넷 익스플로러 : 트라이덴트 | 차크라
+        - 사파리 : 웹킷 | 자바스크립트코어
+        - 오페라 : 블링크 | V8
+- userAgent 프로퍼티
+    - 사용자 에이전트 문자열을 의미한다. 사용자의 웹 브라우저 정보를 서버에 보낼 때 사용한다.
+    - 사용자의 웹 브라우저 버전, 자바스크립트의 엔진 종류 등 여러 정보가 들어 있다. 따라서 서버에서는 그 정보를 확인하여 사용자에게 맞는 웹 페이지를 보여 줄 수 있다.
+    ```javascript
+    // 크롬 userAgent
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36"
 
+    // 엣지 userAgent
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36 Edg/81.0.416.72"
+
+    // 파이어폭스 userAgent
+      "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:76.0) Gecko/20100101 Firefox/76.0 "
+    ```
+    - Mozilla 예약어 : 인터넷 초창기에 넷스케이프 내비게이터 웹 브라우저를 많이 사용했기에 호환성으로 인해 해당 키워드를 사용한다.
+    - 인터넷 익스플로러 11의 경우 트라이덴트(Trident)라는 엔진을 사용한다.
+    ```javascript
+    // 인터넷 익스플로러 11
+    Mozilla/5.0 (Windows NT 6.1; WOW64; Trident/7.0; rv:11.0) like Gecko
+    
+    // 파이어폭스 76.0
+    Mozilla/5.0 (Windows NT 6.1; WOW64; rv:76.0) Gecko/20100101 Firefox/76.0
+    ```
+    - 크롬, 마이크로소프트 엣지, 사파리 모두 웹킷(Webkit) 엔진을 기반으로 한다. 웹킷은 KHTML이라는 오픈소스 렌더링 엔진을 기반으로 한다. 이에 문자열에 KHTML이라는 내용이 포함된다. like Gecko를 사용해서 기존 웹 브라우저와 환환된다고 알려 준다.
+    ```javascript
+    // 윈더우용 크롬 브라우저 81.0 버전
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36"
+
+    // 윈도우용 마이크로소프트 엣지 81.0 버전
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36 Edg/81.0.416.72"
+
+    // 맥용 사파리 브라우저 9.1 버전
+    "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/601.7.7 (KHTML, like Gecko) Version/9.1.2 Safari/601.7.7"
+    ```
+    - 문자열의 의미
+        - Mozill/x.x : 모질라 버전을 나타낸다.
+        - Windows NT x.x : 브라우저를 실행하는 컴퓨터 운영체제를 나타낸다.
+        - Win64; x64 : 윈도우 64비트 기반을 나타낸다.
+        - WOW64 : 윈도우 64비트 기반을 나타낸다.
+        - Trident/x.x : 트라이덴트 엔진 버전을 나타냄
+        - rv: x.x : 브라우저 버전을 나타냄
+        - AppleWebKit/x.x : 웹킷 엔진의 빌드 번호
+        - KHTML : 오픈소스 렌더링 엔진인 KHTML을 의미
+        - like Gecko : 게코 기반의 다른 브라우저와 호환을 의미
+        - Firefox/x.x : 파이어폭스 브라우저 버전
+        - Chrome/x.x : 크롬 버전을 나타냄니다.
+        - Ssfari/x.x : 사파리 브라우저의 빌드 번호를 나타냄
+- navigator 객체 정보
+    - 
 ## 5. 문서 객체 모델(DOM)
