@@ -20,7 +20,17 @@
 <body>
   <p>현재 시각 <span id="current" class="display"></span></p>
   <script>
-    // 16\sol-1.html 소스 참고    
+    // 16\sol-1.html 소스 참고
+    setInterval(displayNow, 1000); // 코드를 주기적으로 실행해주는 함수
+
+    function displayNow() {
+      var now = new Date();
+      var currentTime = now.toLocaleTimeString(); //toLocaleTimeString() : 지역에 맞는 현재 시간을 가져옴
+
+      document.querySelector("#current").innerHTML = currentTime;
+      // document.querySelector(selector): 이 함수는 제공된 선택자(selector)와 일치하는 문서 내의 첫 번째 요소를 반환합니다.
+      // .innerHTML: 이 속성을 사용하여 요소의 내부 HTML 내용을 가져오거나 설정할 수 있습니다.
+    }
   </script>
 </body>
 </html>

@@ -921,4 +921,6 @@ navigator 객체 : 웹 브라우저의 버전을 비롯해 플러그인 설치 �
 - 메서드
     - lockOrientation() : 화면 방향을 잠금
     - unlockOrientation() : 화면 방향을 잠금을 해제
+  
+  
 ## 5. 문서 객체 모델(DOM)

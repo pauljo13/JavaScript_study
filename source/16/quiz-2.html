@@ -28,6 +28,14 @@
       
       // window.open() 메서드를 사용해서 current.html 파일을 팝업 창으로 표시하세요.
       // 팝업 창은 화면 중앙에 표시합니다.
+      window.open("current.html", "현재 시각", centerOpen(400,200));
+
+      function centerOpen(w,h) {
+        var centerWidth = (screen.availWidth - w) / 2 ;
+        var centerHeight = (screen.availHeight - h) / 2 ;
+  
+        return "width=" + w +",height=" + h + ",left=" + centerWidth + ",top=" + centerHeight
+      }
 
     }
   </script>
