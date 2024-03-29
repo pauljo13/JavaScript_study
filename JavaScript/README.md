@@ -962,5 +962,108 @@ navigator 객체 : 웹 브라우저의 버전을 비롯해 플러그인 설치 �
   
   
 ### 5-2. DOM 요소에 접근하고 속성 가져오기
+#### DOM에 접근하기
+css에서는 class, id, 태그 등의 스타일을 각각 구별해서 정의해야 한다. 이떄 class, id, 태그 등을 선택자selector라고 한다. 이 선택자를 사용해서 DOM에 접근하느 방법이 있다.
+- id 선택자로 접근하는 getElementByld() 메서드
+    ```javascript
+    // 기본형
+    요소명.getElementById("id명")
+
+    // 예시
+    document.getElementById("heading")
+    ```
+    - HTML 태그의 id속성은 HTML 요소가 문서 안에서 중복되지 않도록 사용하는 css 선택자이다. getElementById 메서드는 특정한 id가 포함된 DOM 요소에 접근 할 수 있다.
+- class값으로 접근하는 getElementsByClassName() 메서드
+    ```javascript
+    // 기본형
+    요소명.getElementsByClassNeme("class명")
+
+    // 예시
+    document.getElementsByClassNeme("bright")
+    ```
+    - getElementsByClassNeme 메서드는 지정한 class 선택자 이름이 들어 있는 DOM 요소에 접근한다. 
+    - 클래스스 이름이 같은 DOM 요소들이 HTMLCollection 객체로 저장된다. HTMLCollection 객체는 배열과 비슷하고 벼열처럼 사용할 수 있다. 하지만 배열은 아니다.
+- 태그 이름으로 접근하는 getElementsByTagName() 메서드
+    ```javascript
+    // 기본형
+    요소명.getElementsByTagName("태그명")
+
+    // 예시
+    document.getElementsByTagName("p")
+    ```
+    - class나 id를 지정하지 않은 DOM 요소에 접근하려면 태그를 이용한다.
+    - getElementsByTagName() 메서드가 반환하는 값도 HTMLCollenction 형태로 저장 된다.
+- 다양한 방법으로 접근하는 querySelector(), querySelectorAll()
+    ```javascript
+    // 기본형
+    노드.querySelector("선택자")
+    노드.querySelectorAll("선택자 or 태그")
+
+    // 예시
+    querySelector("#heading") //id 요소
+    querySelectorAll(".bright") //class 요소
+    ```
+    - HTMLElement 객체는 HTML 요소만 저장한다.
+    - querySelector,querySelectorAll는 DOM 트리의 텍스트, 속성 노드까지 자유롭게 제어 가능하다.
+    - id는 #, class는 . ,태그는 태그명
+    - querySelector를 class를 사용하면 첫 번째 요소만 반환
+    - 반환값은 노드이거나 노드 리스트이다. 노드 리스트는 노드를 한꺼번에 여러 개 저장한 것으로 배열과 비슷하다고 생각하면 된다.
+  
+#### 웹 요소의 내용을 수정하는 innerText, innerHTML 프로퍼티
+자바스크립트에서는 웹 욧의 내용도 수정할 수 있다. 가장 쉬운 방법은 innerText 프로퍼티나 innerHTML 프로퍼티를 이용하는 것이다.
+- innerText : 텍스트 내용을 표시
+- innerHTML : HTML 태그까지 반영하여 표시
+```javascript
+요소명.innerText = 내용
+요소명.innerHTML = 내용
+```
+  
+#### 속성을 가져오거나 수정하는 getAttribute(), setAttribute() 메서드
+웹 요소를 문서에 삽입할 때 태그 속성을 함께 사용하면 DOM 트리에 속성 노드가 추가되면서 속성값이 저장된다. 이때 속성에 접근하려면 getAttribute() 메서드를 사용하고, 접근한 속성의 속성의 값을 바꾸려면 setAttribute() 메서드에서 속성 명을 지정한다.
+```javascript
+getAttribute("속성명") // 원하는 속성을 가져온다.
+
+setAttribute("속성명", "값") //  원하는 속성값으로 지정할 수 있다.
+```
+- getAttribute : 속성에 접근
+- setAttribute : 속성값을 지정, 이미 값이 있는 경우 수정, 없다면 속성과 속성값이 새로 추가
+  
+  
 ### 5-3. DOM에서 이벤트 처리하기
+웹 문서에서 이벤트가 발생하면 이벤트 처리기(event handier)를 연결해야 한다. HTML 태그에서 이벤트 처리기를 연결할 수도 있디만 태그와 스크립트 소스가 섞여 있어서 복잡한 프로그램에는 적합하지 않다. 이럴 때 DOM에서 이벤트 처리기를 연결하면 HTML 태그와 스크립트 소스를 분리할 수 있다.
+#### DOM 요소에 함수 직접 연결하기
+이벤트 처리기 함수가 간단하다면 DOM 요소에 직접 연결할 수 있다.
+```javascript
+// cup 이라는 아이디를 onclick 사용해 변수에 이벤트 처리기(함수)를 직접 연결
+    var cup = document.querySelector("#cup");
+    cup.onclick = function() {
+        alert("이미지를 클릭했습니다.")
+    }
+```
+  
+#### 함수 이름을 사용해 연결하기
+이벤트가 발생했을 때 실행할 함수를 따로 정의해 놓았다면 함수이름을 사용해 연결할 수 있다.
+이 경우에는 함수 이름 다음에 괄호를 추가하지 않는다.
+```javascript
+    var cup = document.querySelector("#cup");
+    cup.onclick = changePic;
+
+    function changePic() {
+        cup.src = "../../source/17/images/cup-2.png";
+    }
+```
+  
+#### DOM의 event 객체 알아보기
+DOM에는 이벤트 정보를 저장하는 event객체가 있다. 이 객체에는 웹문서에서 이벤트가 발생한 요소가 무엇인지, 어떤 이벤트가 발생했는지 등의 정보가 들어 있다.
+```javascript
+    var cup = document.querySelector("#cup");
+    cup.onclick = function(event) {
+        alert("이벤트 유형:" + event.type + ", 이벤트 발생 위치: " + event.pageX + "," + event.pageY);
+    }
+```
+- event 객체 프로퍼티
+    - altKey
+    - button
+    - charCode
+    -   
 ### 5-4. DOM에서 노드 추가 삭제하기

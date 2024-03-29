@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM 이벤트 처리</title>
+</head>
+<body>
+    <img src="../../source/17/images/cup-1.png" id="cup">
+
+    <script>
+        // 직접 연결
+        // var cup = document.querySelector("#cup");
+        // cup.onclick = function() {
+        //     alert("이미지를 클릭했습니다.")
+        // }
+
+        // 함수 이름을 사용해 연결
+        // var cup = document.querySelector("#cup");
+        // cup.onclick = changePic;
+
+        // function changePic() {
+        //     cup.src = "../../source/17/images/cup-2.png";
+        // }
+
+        //DOM의 event 객체 
+        var cup = document.querySelector("#cup");
+        cup.onclick = function(event) {
+            alert("이벤트 유형:" + event.type + ", 이벤트 발생 위치: " + event.pageX + "," + event.pageY);
+        }
+    </script>
+</body>
+</html>
