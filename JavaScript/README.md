@@ -1062,8 +1062,43 @@ DOM에는 이벤트 정보를 저장하는 event객체가 있다. 이 객체에�
     }
 ```
 - event 객체 프로퍼티
-    - altKey
-    - button
-    - charCode
-    -   
+    - altKey : 이벤트가 발생할 때 Alt를 눌렀는지 여부를 boolean값으로 반환
+    - button : 마우스에서 누른 버튼의 키값을 반환
+    - charCode : keypress 이벤트가 발생할 때 어떤 키를 눌렀는지 유니코드값으로 반환합니다.
+    - clientX : 이벤트가 발생한 가로 위치를 반환
+    - clientY : 이벤트가 발생한 세로 위치를 반환
+    - ctrlKey : 이벤트가 발생했을 때 ctrl를 눌었는지 여부를 boolean값으로 반환
+    - pageX : 현재 문서 기준으로 이벤트가 발생한 가로 위치를 반환
+    - pageY : 현재 문서 기준으로 이벤트가 발생한 세로 위치를 반환
+    - screenX : 현재 화면 기준으로 이벤트가 발생한 가로 위치를 반환
+    - screenY : 현재 화면 기준으로 이벤트가 발생한 세로 위치를 반환
+    - shiftKey : 이벤트가 발생할 때 shift를 눌렀는지 여부를 boolean값으로 반환
+    - target : 이벤트가 최초로 발생한 대상을 반환
+    - timesStamp : 이벤트가 발생한 시간을 반환
+    - type : 발생한 이벤트 이름을 반환
+    - which : 키보드와 관련된 이벤트가 발생할 때 키의 유니코드값을 반환
+- event 메서드
+    - preventDefault() : 이벤트를 취소할 수 있는 경우에 취소
+  
+#### abbEventListener()
+abbEventListener() : 한 요소에 여러 이벤트 처리기를 연결해 실행 할 수 있다.
+```javascript
+요소.addEventListener(이벤트, 함수, 캡쳐 여부);
+    // 이벤트 : 이벤트 유형을 지정 단, click, keypress 처럼 on을 붙이지 않고 쓴다.
+    // 함수 : 이벤트가 발생하면 실행한 명령이나 함수를 지정, 함수를 정의할 때는 event 객체를 인수로 받는다.
+    // 캡쳐 여부 : 이벤트를 캡쳐하는 여부를 지정하며 기본값은 false이고 true와 false 중에서 선택 할 수 있다. 이벤트 캡처링은 DOM의 부모 노드에서 자식 노드로 전달되는 것이고, 이벤트 버블링은 DOM의 자식 노드에서 부모 노드로 전달되는 것이다.
+```
+  
+#### CSS 속성에 접근하기
+자바스크립트를 이용하면 스타일 속성값을 가져와서 그 값을 원하는 대로 수정할 수 있다. 자바스크립트에서는 각 요소의 스타일을 자유롭게 수정할 수 있으므로 웹 문서에서 다양한 효과를 만들 수 있다.
+- style : css 속성에 접근할 수 있는 예약어
+```javascript
+// 기본형
+document.요소명.style.속성명
+
+// 예시
+document.getElementById("desc").style.color = "blue";
+```
+
+
 ### 5-4. DOM에서 노드 추가 삭제하기

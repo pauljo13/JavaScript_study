@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>마우스 포인터</title>
+</head>
+<body>
+    <img src="../../source/17/images/easys-1.jpg" id="cover">
+
+    <script>
+        var cover = document.getElementById("cover");
+        cover.addEventListener("mouseover", changePic);
+        cover.addEventListener("mouseout", originPic);
+
+        function changePic() {
+            cover.src = "../../source/17/images/easys-2.jpg";
+        }
+        function originPic() {
+            cover.src = "../../source/17/images/easys-1.jpg"
+        }
+    </script>
+</body>
+</html>
